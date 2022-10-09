@@ -8,5 +8,11 @@ trait MyEncoder[T]:
 class Context:
   inline def summonMyEncoder[T]: String =
     ${ SummonEncoder.impl[T] }
+
   implicit val encoderInstance: MyEncoder[String] =
     new MyEncoder[String] { def encode = "blah" }
+
+  //given encoderInstance: MyEncoder[String] =
+  //  new MyEncoder[String] { def encode = "blah" }
+
+end Context

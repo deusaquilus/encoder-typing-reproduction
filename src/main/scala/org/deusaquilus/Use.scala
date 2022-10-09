@@ -2,7 +2,7 @@ package org.deusaquilus
 
 class Repo[T]:
   val ctx = new Context
-  inline def summonEncoder = { import ctx._
+  inline def summonEncoder = { import ctx._ // change to: import ctx.{given, _} for the given example
     summonMyEncoder[T]
   }
 
