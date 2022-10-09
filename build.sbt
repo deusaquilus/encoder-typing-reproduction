@@ -9,7 +9,8 @@ lazy val `protoquill-example` = project
       "Sonatype OSS Releases" at "https://oss.sonatype.org/service/local/repositories/releases/content"
     ),
     scalaVersion := "3.2.0",
-    //scalaVersion := "3.1.3",
+    // Also doesn't work with latest nightly
+    //scalaVersion := dottyLatestNightlyBuild().get,
     scalacOptions ++= Seq(
       "-language:implicitConversions",
     )
