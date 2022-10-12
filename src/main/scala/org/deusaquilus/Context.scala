@@ -5,7 +5,7 @@ import scala.quoted._
 trait MyEncoder[T]:
   def encode: String
 
-class Context:
+object StaticContext:
   inline def summonMyEncoder[T]: String =
     ${ SummonEncoder.impl[T] }
 
@@ -15,4 +15,4 @@ class Context:
   //given encoderInstance: MyEncoder[String] =
   //  new MyEncoder[String] { def encode = "blah" }
 
-end Context
+end StaticContext

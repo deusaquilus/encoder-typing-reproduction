@@ -1,8 +1,9 @@
 package org.deusaquilus
 
+import StaticContext._
+
 class Repo[T]:
-  val ctx = new Context
-  inline def summonEncoder = { import ctx._ // change to: import ctx.{given, _} for the given example
+  inline def summonEncoder = {
     summonMyEncoder[T]
   }
 
